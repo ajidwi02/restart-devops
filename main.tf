@@ -65,9 +65,9 @@ resource "aws_instance" "challenge" {
               systemctl enable httpd
               cd /var/www/html
               sudo chown ec2-user .
-              git clone https://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@github.com/zavfake/restart-devops-challenge.git
-              sudo cp restart-devops-challenge/hello.html /var/www/html/index.html
-              sudo rm -rf restart-devops-challenge
+              git clone https://github.com/ajidwi02/restart-devops.git
+              sudo cp restart-devops/hello.html /var/www/html/index.html
+              sudo rm -rf restart-devops
               EOF
 }
 
