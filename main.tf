@@ -3,24 +3,24 @@ provider "aws" {
   profile = "restart"
 }
 
-# data "aws_ami" "amazon-linux" {
-#   most_recent = true
-
-#   filter {
-#     name   = "image-id"
-#     values = ["ami-0c82cd70874a842cf"]
-#   }
-# }
-
 data "aws_ami" "amazon-linux" {
   most_recent = true
-  owners      = ["amazon"]
 
   filter {
-    name   = "name"
-    values = ["al2023-ami-2023.*-x86_64"]
+    name   = "image-id"
+    values = ["ami-007e5a061b93ceb2f"]
   }
 }
+
+# data "aws_ami" "amazon-linux" {
+#   most_recent = true
+#   owners      = ["amazon"]
+
+#   filter {
+#     name   = "name"
+#     values = ["al2023-ami-2023.*-x86_64"]
+#   }
+# }
 
 resource "aws_security_group" "challenge_sg" {
   name        = "challenge_sg"
